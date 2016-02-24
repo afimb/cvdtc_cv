@@ -2,12 +2,12 @@ package cvdtc.user.checker;
 
 import javax.ejb.Stateless;
 
-import mobi.chouette.service.ContenerCheckerInterface;
+import mobi.chouette.common.ContenerChecker;
 
 
-@Stateless(name = ContenerCheckerInterface.NAME)
+@Stateless(name = ContenerChecker.NAME)
 
-public class UserChecker implements ContenerCheckerInterface
+public class UserChecker implements ContenerChecker
 {
 
 
@@ -18,5 +18,9 @@ public class UserChecker implements ContenerCheckerInterface
 		return (contenerName.matches("^[0-9]+$"));
 		}
 	
+	@Override
+	public String getContext() {
+		return "cvdtc";
+	}
 
 }
