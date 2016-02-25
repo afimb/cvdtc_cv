@@ -6,7 +6,7 @@
 		<artifactId>cvdtc</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>cvdtc_iev</artifactId>
+	<artifactId>cvdtc_cv</artifactId>
 	<packaging>ear</packaging>
    <properties>
       <project.rootDir>${project.basedir}/..</project.rootDir>
@@ -73,7 +73,7 @@
 		                <artifactId>mobi.chouette.ws</artifactId>
 		                <uri>mobi.chouette.ws.war</uri>
 		                <bundleFileName>mobi.chouette.ws.war</bundleFileName>
-		                <contextRoot>/cvdtc_iev</contextRoot>
+		                <contextRoot>/cvdtc_cv</contextRoot>
 		            </webModule>
 		        </modules>
 				</configuration>
@@ -98,7 +98,7 @@
          <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
             <configuration>
-               <finalName>cvdtc-iev_${project.version}</finalName>
+               <finalName>cvdtc-cv_${project.version}</finalName>
                <appendAssemblyId>false</appendAssemblyId>
                <descriptors>
                   <descriptor>src/main/resources/assemblies/afimb.xml</descriptor>
