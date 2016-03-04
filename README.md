@@ -10,7 +10,7 @@ The CVDTC Web Service API is specified here :
 * [Interface Specification Document](./doc/interface/Chouette-API serveur IEV-1.0.pdf)
 * inputs and outputs data structures [Jobs](./doc/interface/Jobs.xsd), [Reports](./doc/interface/Reports.xsd)
 
-CVDTC_CV is used by [Chouette2 ](https://github.com/afimb/chouette2), a standard-based PT planned data management web application.
+CVDTC_CV is used by [cvdtc ](https://github.com/afimb/cvdtc), a specific web application to give it's fonctionnality open.
 
 Format documentations are available for:
 * Neptune
