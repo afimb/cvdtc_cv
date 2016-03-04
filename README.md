@@ -1,5 +1,4 @@
-# CVDTC_CV [![Build Status](https://travis-ci.org/afimb/cvdtc_cv.png)](http://travis-ci.org/afimb/cvdtc_cv?branch=master)[![Coverity Scan](https://img.shields.io/coverity/scan/5816.svg)](https://scan.coverity.com/projects/5816)
-
+# CVDTC_CV [![Build Status](https://travis-ci.org/afimb/cvdtc_cv.png)](http://travis-ci.org/afimb/cvdtc_cv?branch=master)
 CVDTC_CV is a java project for Validate and convert public transport (PT) data upon different formats: Neptune, NeTEx, GTFS and provides 2 main services:
 
 * convert PT data files between Neptune, NeTEx and GTFS formats
@@ -16,7 +15,7 @@ CVDTC_CV is used by [Chouette2 ](https://github.com/afimb/chouette2), a standard
 Format documentations are available for:
 * Neptune
  * [www.normes-donnees-tc.org](http://www.normes-donnees-tc.org/format-dechange/donnees-theoriques/neptune/)
-* NeTEx
+* NeTEx (experimental local agreement)
  * [www.normes-donnees-tc.org](http://www.normes-donnees-tc.org/format-dechange/donnees-theoriques/netex/)
 * GTFS
  * [General Transit Feed Specification Reference](https://developers.google.com/transit/gtfs/reference)
@@ -31,6 +30,7 @@ The CVDTC_CV java project is split into modules :
 The CVDTC_CV java project uses chouette modules :
 
 * mobi.chouette.common : common classes and interfaces
+* mobi.chouette.dao.iev : Dao implementation for iev persistence (EJB)
 * mobi.chouette.exchange : Common classes, interfaces and commands for data exchange 
 * mobi.chouette.exchange.gtfs : Specific commands for GTFS data exchange and validation 
 * mobi.chouette.exchange.neptune : Specific commands for Neptune data exchange and validation 
@@ -105,14 +105,12 @@ mvn test -DskipWildfly
 Deployment :
 
 change the data storage directory (USER_HOME by default) :
-copy properties file [iev.properties](./doc/iev.properties) in /etc/cvdtc/iev/ directory
-change property ```iev.directory``` value to desired directory
-change property ```iev.started.jobs.max``` value to limit parallel jobs processing (default = 5)
-change property ```iev.copy.by.import.max``` value to limit parallel single line import by import job (default = 5)
+copy properties file [cvdtc.properties](./doc/cvdtc.properties) in /etc/chouette/cvdtc/ directory
+change property ```cvdtc.directory``` value to desired directory
+change property ```cvdtc.started.jobs.max``` value to limit parallel jobs processing (default = 5)
+change property ```cvdtc.copy.by.import.max``` value to limit parallel single line import by import job (default = 5)
 
 [Install and configure Wildfly](./doc/install/wildfly.md) 
-
-[For existing chouette_iev deployment : update postgres / wildfly configuration](./doc/install/update.md) 
 
 deploy ear (wildfly must be running)
 ```sh
@@ -123,14 +121,12 @@ mvn -DskipTests install
 download cvdtc_cv.x.y.z.zip from [maven repository](http://maven.chouette.mobi/mobi/chouette/cvdtc_cv)
 
 change the data storage directory (USER_HOME by default)
-copy the properties file [iev.properties](./doc/iev.properties) into /etc/cvdtc/iev/ directory
-change the ```iev.directory``` value to the desired directory
-change the ```iev.started.jobs.max``` value in order to limit the max number of parallel jobs (default = 5)
+copy the properties file [cvdtc.properties](./doc/cvdtc.properties) into /etc/chouette/cvdtc/ directory
+change the ```cvdtc.directory``` value to the desired directory
+change the ```cvdtc.started.jobs.max``` value in order to limit the max number of parallel jobs (default = 5)
 
 [Install and configure Wildfly](./doc/install/wildfly.md) 
 
-.
-[For an existing chouette_iev deployment : update the postgres / wildfly configuration](./doc/install/update.md) 
 
 in the wildfly installation repository :
 ```sh

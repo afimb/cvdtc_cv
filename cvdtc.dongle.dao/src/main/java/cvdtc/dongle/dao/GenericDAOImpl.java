@@ -80,4 +80,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 	public void deleteChildren(List<String> list) {
 		throw new UnsupportedOperationException("unimplemented method");
 	}
+	
+	public void clear() {
+		throw new UnsupportedOperationException("unimplemented method");
+	}
 }
