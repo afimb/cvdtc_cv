@@ -23,7 +23,7 @@
 		<jts.version>1.13</jts.version>
 		<arquillian-version>1.1.7.Final</arquillian-version>
 		<project.rootDir>${project.basedir}</project.rootDir>
-		<chouette.version>3.3.0-SNAPSHOT</chouette.version>
+		<chouette.version>3.3.1-SNAPSHOT</chouette.version>
 	</properties>
 	<distributionManagement>
 		<snapshotRepository>
